@@ -21,8 +21,6 @@ let currencyService = CurrencyService()
     
     @IBOutlet weak var amountTextField: UITextField!
  
-    
-    
     @IBAction func validateButton(_ sender: UIButton) {
         currencyService.getExchange(devise: "USD") { result in
             switch result {
@@ -30,9 +28,7 @@ let currencyService = CurrencyService()
                 self.alertVC()
             case .success(let exchangeRate):
                 print(exchangeRate)
-        
                 amountChangeLabel.text = String(exchangeRate * Double(amountTextField.text!))
-          
             }
             
         }

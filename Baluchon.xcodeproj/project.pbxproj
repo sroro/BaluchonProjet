@@ -14,10 +14,10 @@
 		9435877D2449E6B700A1493C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9435877B2449E6B700A1493C /* LaunchScreen.storyboard */; };
 		943587882449E6B700A1493C /* BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943587872449E6B700A1493C /* BaluchonTests.swift */; };
 		9435879C2449F2D100A1493C /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435879B2449F2D100A1493C /* CurrencyViewController.swift */; };
+		9439BE0924585F1200368A93 /* FixerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439BE0824585F1200368A93 /* FixerData.swift */; };
 		945DFFF9244C720C004B4458 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945DFFF8244C720C004B4458 /* WeatherViewController.swift */; };
 		945DFFFB244C7217004B4458 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945DFFFA244C7217004B4458 /* TranslateViewController.swift */; };
 		94EA9A5B24507120001BA0B5 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA9A5A24507120001BA0B5 /* CurrencyService.swift */; };
-		94EA9A5D245705FC001BA0B5 /* FixerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA9A5C245705FC001BA0B5 /* FixerData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +42,10 @@
 		943587872449E6B700A1493C /* BaluchonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonTests.swift; sourceTree = "<group>"; };
 		943587892449E6B700A1493C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9435879B2449F2D100A1493C /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		9439BE0824585F1200368A93 /* FixerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerData.swift; sourceTree = "<group>"; };
 		945DFFF8244C720C004B4458 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		945DFFFA244C7217004B4458 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		94EA9A5A24507120001BA0B5 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
-		94EA9A5C245705FC001BA0B5 /* FixerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				94EA9A5A24507120001BA0B5 /* CurrencyService.swift */,
-				94EA9A5C245705FC001BA0B5 /* FixerData.swift */,
+				9439BE0824585F1200368A93 /* FixerData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,9 +247,9 @@
 				9435876E2449E6B600A1493C /* AppDelegate.swift in Sources */,
 				945DFFFB244C7217004B4458 /* TranslateViewController.swift in Sources */,
 				94EA9A5B24507120001BA0B5 /* CurrencyService.swift in Sources */,
-				94EA9A5D245705FC001BA0B5 /* FixerData.swift in Sources */,
 				945DFFF9244C720C004B4458 /* WeatherViewController.swift in Sources */,
 				9435879C2449F2D100A1493C /* CurrencyViewController.swift in Sources */,
+				9439BE0924585F1200368A93 /* FixerData.swift in Sources */,
 				943587702449E6B600A1493C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
