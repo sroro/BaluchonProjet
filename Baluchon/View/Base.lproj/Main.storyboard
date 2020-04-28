@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7h-oU-45Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6xe-RI-2nO">
+            <objects>
+                <tabBarController id="f7h-oU-45Y" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rXW-2u-4IZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.98431372549999996" green="0.80392156859999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RNE-UR-W3f" kind="relationship" relationship="viewControllers" id="4Sn-VK-wum"/>
+                        <segue destination="87U-6N-chk" kind="relationship" relationship="viewControllers" id="VN9-aM-XWg"/>
+                        <segue destination="4Am-fK-EM1" kind="relationship" relationship="viewControllers" id="gpT-mK-LrN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SR7-74-MoE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-601" y="73"/>
+        </scene>
+        <!--Currency Exchange-->
+        <scene sceneID="akw-cz-RpZ">
+            <objects>
+                <viewController id="4Am-fK-EM1" customClass="CurrencyViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fca-fi-nhY" userLabel="View" customClass="Curre">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace taux de change de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-ft-f7M">
+                                <rect key="frame" x="55" y="251" width="304" height="57"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€uro" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9hN-Z0-DF0">
+                                <rect key="frame" x="111" y="540" width="192" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9hN-Z0-DF0" secondAttribute="height" multiplier="96:17" id="8aQ-Fw-9aK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="continue"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ma monnaie local:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4Y-l9-U6F">
+                                <rect key="frame" x="138.5" y="507.5" width="137" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monnaie en dollars:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mx1-ix-BlB">
+                                <rect key="frame" x="133.5" y="614" width="147.5" height="25"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImC-fC-dqo" userLabel="dollars">
+                                <rect key="frame" x="111" y="647" width="192" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TVN-HL-Urq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-échange-de-devises-80" translatesAutoresizingMaskIntoConstraints="NO" id="a6M-VW-agj">
+                                <rect key="frame" x="107" y="101" width="200" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a6M-VW-agj" secondAttribute="height" multiplier="20:13" id="CyH-wB-E2L"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuR-Ki-Vbm">
+                                <rect key="frame" x="329" y="540" width="34" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="AOx-im-gUB"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="validateButton:" destination="4Am-fK-EM1" eventType="touchUpInside" id="y5S-ks-d2m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470590000005" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="DhM-g6-zSZ" firstAttribute="trailing" secondItem="ZuR-Ki-Vbm" secondAttribute="trailing" constant="51" id="2Yc-S9-dtz"/>
+                            <constraint firstItem="w4Y-l9-U6F" firstAttribute="centerX" secondItem="Fca-fi-nhY" secondAttribute="centerX" id="4gq-Ee-W0k"/>
+                            <constraint firstItem="ImC-fC-dqo" firstAttribute="leading" secondItem="DhM-g6-zSZ" secondAttribute="leading" constant="111" id="DCJ-SH-Yer"/>
+                            <constraint firstItem="a6M-VW-agj" firstAttribute="leading" secondItem="DhM-g6-zSZ" secondAttribute="leading" constant="107" id="Dpn-FF-cyR"/>
+                            <constraint firstItem="ZuR-Ki-Vbm" firstAttribute="centerY" secondItem="9hN-Z0-DF0" secondAttribute="centerY" id="L35-3l-tBb"/>
+                            <constraint firstItem="Mx1-ix-BlB" firstAttribute="centerX" secondItem="Fca-fi-nhY" secondAttribute="centerX" id="QQ7-vI-XNC"/>
+                            <constraint firstItem="DhM-g6-zSZ" firstAttribute="bottom" secondItem="ImC-fC-dqo" secondAttribute="bottom" constant="136" id="QQj-Qs-OTc"/>
+                            <constraint firstItem="DhM-g6-zSZ" firstAttribute="bottom" secondItem="ZuR-Ki-Vbm" secondAttribute="bottom" constant="239" id="TXK-WW-eMI"/>
+                            <constraint firstItem="ZuR-Ki-Vbm" firstAttribute="leading" secondItem="9hN-Z0-DF0" secondAttribute="trailing" constant="26" id="Vfe-XK-EB3"/>
+                            <constraint firstItem="9hN-Z0-DF0" firstAttribute="centerX" secondItem="Fca-fi-nhY" secondAttribute="centerX" id="Vm4-QK-Pkp"/>
+                            <constraint firstItem="DhM-g6-zSZ" firstAttribute="trailing" secondItem="KDF-ft-f7M" secondAttribute="trailing" constant="55" id="e1c-w7-ZYF"/>
+                            <constraint firstItem="a6M-VW-agj" firstAttribute="top" secondItem="DhM-g6-zSZ" secondAttribute="top" constant="57" id="nxa-ny-8Vv"/>
+                            <constraint firstItem="Mx1-ix-BlB" firstAttribute="top" secondItem="9hN-Z0-DF0" secondAttribute="bottom" constant="40" id="oWo-3S-BqF"/>
+                            <constraint firstItem="9hN-Z0-DF0" firstAttribute="top" secondItem="w4Y-l9-U6F" secondAttribute="bottom" constant="8" id="ppL-1G-Bhb"/>
+                            <constraint firstItem="KDF-ft-f7M" firstAttribute="top" secondItem="a6M-VW-agj" secondAttribute="bottom" constant="20" id="qq5-Y8-NpX"/>
+                            <constraint firstItem="ImC-fC-dqo" firstAttribute="centerX" secondItem="Fca-fi-nhY" secondAttribute="centerX" id="stv-4b-PWp"/>
+                            <constraint firstItem="DhM-g6-zSZ" firstAttribute="trailing" secondItem="a6M-VW-agj" secondAttribute="trailing" constant="107" id="twD-5J-dfs"/>
+                            <constraint firstItem="ImC-fC-dqo" firstAttribute="top" secondItem="Mx1-ix-BlB" secondAttribute="bottom" constant="8" id="vTj-3M-1yp"/>
+                            <constraint firstItem="KDF-ft-f7M" firstAttribute="leading" secondItem="DhM-g6-zSZ" secondAttribute="leading" constant="55" id="wTH-uT-SES"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DhM-g6-zSZ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uxu-Ff-b4R" appends="YES" id="wvn-Ut-5aT"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Currency Exchange" image="icons8-échange-de-devises-25" id="szX-6s-EYQ">
+                        <color key="badgeColor" red="0.98431372549999996" green="0.80392156859999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="amountChangeLabel" destination="ImC-fC-dqo" id="59E-Tr-oDe"/>
+                        <outlet property="amountTextField" destination="9hN-Z0-DF0" id="mCA-mH-VRM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXW-Hw-4A5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uxu-Ff-b4R">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="4Am-fK-EM1" id="Ghu-zC-FRB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="863.768115942029" y="-403.125"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="j6y-lj-zJj">
+            <objects>
+                <viewController id="RNE-UR-W3f" customClass="WeatherViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xQw-s5-CVn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-lever-du-soleil-500" translatesAutoresizingMaskIntoConstraints="NO" id="62S-fo-JY6">
+                                <rect key="frame" x="107" y="114" width="200" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="0tg-6Y-K1D"/>
+                                    <constraint firstAttribute="width" constant="200" id="NHr-uE-HOK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace météo de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbN-qV-dKJ">
+                                <rect key="frame" x="55" y="245" width="304" height="48.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470588235294" green="0.90980392156862744" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="top" secondItem="62S-fo-JY6" secondAttribute="bottom" constant="1" id="NBc-JL-oWX"/>
+                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="leading" secondItem="4LA-S6-LQh" secondAttribute="leading" constant="55" id="dbz-vp-2V4"/>
+                            <constraint firstItem="4LA-S6-LQh" firstAttribute="trailing" secondItem="BbN-qV-dKJ" secondAttribute="trailing" constant="55" id="poX-xd-28i"/>
+                            <constraint firstItem="62S-fo-JY6" firstAttribute="top" secondItem="4LA-S6-LQh" secondAttribute="top" constant="70" id="z87-3m-nud"/>
+                            <constraint firstItem="62S-fo-JY6" firstAttribute="centerX" secondItem="xQw-s5-CVn" secondAttribute="centerX" id="zSE-JH-bg8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4LA-S6-LQh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" image="icons8-pluie-25" id="g1i-Sz-0Dv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyc-bt-ifx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.768115942029" y="585.9375"/>
+        </scene>
+        <!--Translate-->
+        <scene sceneID="QyM-se-BZM">
+            <objects>
+                <viewController id="87U-6N-chk" customClass="TranslateViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EdW-aI-rUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-langue-100" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-DX-3gu">
+                                <rect key="frame" x="107" y="114" width="200" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="GNw-C9-xIp"/>
+                                    <constraint firstAttribute="width" constant="200" id="vQx-Rv-6O0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace tradution de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvy-L6-i13">
+                                <rect key="frame" x="55" y="245" width="305" height="48.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre texte:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTK-4l-64d">
+                                <rect key="frame" x="55" y="464.5" width="93.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWw-fR-whm">
+                                <rect key="frame" x="55" y="633" width="85" height="25"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-Md-YYj" userLabel="votreTexte">
+                                <rect key="frame" x="64" y="497" width="286" height="95"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="bbb-Mf-U9V"/>
+                                    <constraint firstAttribute="height" constant="95" id="g4q-LD-MYd"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jTA-BM-YdG" userLabel="traductionText">
+                                <rect key="frame" x="64" y="666" width="286" height="95"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="Xch-vo-biX"/>
+                                    <constraint firstAttribute="width" constant="286" id="uCy-M3-WCR"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqP-Ps-ZAi">
+                                <rect key="frame" x="364" y="497" width="20" height="95"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="7o0-B3-v1v"/>
+                                    <constraint firstAttribute="width" constant="20" id="ijX-9A-v59"/>
+                                </constraints>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="validateButton:" destination="87U-6N-chk" eventType="touchUpInside" id="xlY-Z1-3Zz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470590000005" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mFY-DX-3gu" firstAttribute="top" secondItem="4Nf-Kv-Vvh" secondAttribute="top" constant="70" id="691-z0-I2X"/>
+                            <constraint firstItem="LrE-Md-YYj" firstAttribute="centerX" secondItem="EdW-aI-rUJ" secondAttribute="centerX" id="73e-yh-TE9"/>
+                            <constraint firstItem="jTA-BM-YdG" firstAttribute="top" secondItem="oWw-fR-whm" secondAttribute="bottom" constant="8" id="BH7-Rp-cl0"/>
+                            <constraint firstItem="mFY-DX-3gu" firstAttribute="centerX" secondItem="EdW-aI-rUJ" secondAttribute="centerX" id="D1H-e1-SIW"/>
+                            <constraint firstItem="4Nf-Kv-Vvh" firstAttribute="bottom" secondItem="jTA-BM-YdG" secondAttribute="bottom" constant="52" id="Dxl-8z-gDy"/>
+                            <constraint firstItem="4Nf-Kv-Vvh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eTK-4l-64d" secondAttribute="trailing" symbolic="YES" id="GCf-Hn-c7g"/>
+                            <constraint firstItem="4Nf-Kv-Vvh" firstAttribute="trailing" secondItem="mvy-L6-i13" secondAttribute="trailing" constant="54" id="I2L-B1-bnK"/>
+                            <constraint firstItem="mvy-L6-i13" firstAttribute="leading" secondItem="4Nf-Kv-Vvh" secondAttribute="leading" constant="55" id="K70-pr-NdP"/>
+                            <constraint firstItem="mvy-L6-i13" firstAttribute="top" secondItem="mFY-DX-3gu" secondAttribute="bottom" constant="1" id="KEM-wz-PtK"/>
+                            <constraint firstItem="oWw-fR-whm" firstAttribute="leading" secondItem="4Nf-Kv-Vvh" secondAttribute="leading" constant="55" id="MkH-g0-Sb7"/>
+                            <constraint firstItem="oWw-fR-whm" firstAttribute="top" secondItem="LrE-Md-YYj" secondAttribute="bottom" constant="41" id="RbK-sJ-GQt"/>
+                            <constraint firstItem="eTK-4l-64d" firstAttribute="leading" secondItem="4Nf-Kv-Vvh" secondAttribute="leading" constant="55" id="Vx9-8g-gOw"/>
+                            <constraint firstItem="iqP-Ps-ZAi" firstAttribute="leading" secondItem="LrE-Md-YYj" secondAttribute="trailing" constant="14" id="XhK-fz-a93"/>
+                            <constraint firstItem="iqP-Ps-ZAi" firstAttribute="top" secondItem="LrE-Md-YYj" secondAttribute="top" id="dM3-fd-akN"/>
+                            <constraint firstItem="LrE-Md-YYj" firstAttribute="top" secondItem="eTK-4l-64d" secondAttribute="bottom" constant="8" id="eU3-y4-WbZ"/>
+                            <constraint firstItem="4Nf-Kv-Vvh" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oWw-fR-whm" secondAttribute="trailing" symbolic="YES" id="oz0-rk-C4c"/>
+                            <constraint firstItem="jTA-BM-YdG" firstAttribute="centerX" secondItem="EdW-aI-rUJ" secondAttribute="centerX" id="tOa-Xs-QQ9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Nf-Kv-Vvh"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xAv-gv-qCn" appends="YES" id="8Lj-xT-q9P"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Translate" image="icons8-langue-25" id="zO0-xI-eC8"/>
+                    <connections>
+                        <outlet property="textToTranslate" destination="LrE-Md-YYj" id="jTT-KF-JBE"/>
+                        <outlet property="textTranslate" destination="jTA-BM-YdG" id="Dj4-Ei-18s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIZ-2n-1x6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xAv-gv-qCn">
+                    <connections>
+                        <action selector="dismissKeyboardGesture:" destination="87U-6N-chk" id="EfW-OG-gRd"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2257.971014492754" y="72.991071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-échange-de-devises-25" width="25" height="25"/>
+        <image name="icons8-échange-de-devises-80" width="80" height="80"/>
+        <image name="icons8-langue-100" width="100" height="100"/>
+        <image name="icons8-langue-25" width="25" height="25"/>
+        <image name="icons8-lever-du-soleil-500" width="500" height="500"/>
+        <image name="icons8-pluie-25" width="25" height="25"/>
+    </resources>
+</document>
