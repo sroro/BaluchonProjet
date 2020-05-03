@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7h-oU-45Y">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,17 +32,17 @@
             <objects>
                 <viewController id="4Am-fK-EM1" customClass="CurrencyViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fca-fi-nhY" userLabel="View" customClass="Curre">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace taux de change de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-ft-f7M">
-                                <rect key="frame" x="55" y="251" width="304" height="57"/>
+                                <rect key="frame" x="55" y="225.66666666666666" width="265" height="56.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€uro" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9hN-Z0-DF0">
-                                <rect key="frame" x="111" y="540" width="192" height="34"/>
+                                <rect key="frame" x="111" y="459.33333333333331" width="153" height="27.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9hN-Z0-DF0" secondAttribute="height" multiplier="96:17" id="8aQ-Fw-9aK"/>
                                 </constraints>
@@ -50,19 +50,19 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="continue"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ma monnaie local:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4Y-l9-U6F">
-                                <rect key="frame" x="138.5" y="507.5" width="137" height="24.5"/>
+                                <rect key="frame" x="119" y="427" width="137" height="24.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monnaie en dollars:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mx1-ix-BlB">
-                                <rect key="frame" x="133.5" y="614" width="147.5" height="25"/>
+                                <rect key="frame" x="113.66666666666667" y="526.66666666666663" width="147.66666666666663" height="28.333333333333371"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImC-fC-dqo" userLabel="dollars">
-                                <rect key="frame" x="111" y="647" width="192" height="30"/>
+                                <rect key="frame" x="111" y="563" width="153" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TVN-HL-Urq"/>
@@ -72,13 +72,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-échange-de-devises-80" translatesAutoresizingMaskIntoConstraints="NO" id="a6M-VW-agj">
-                                <rect key="frame" x="107" y="101" width="200" height="130"/>
+                                <rect key="frame" x="107" y="101" width="161" height="104.66666666666669"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a6M-VW-agj" secondAttribute="height" multiplier="20:13" id="CyH-wB-E2L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuR-Ki-Vbm">
-                                <rect key="frame" x="329" y="540" width="34" height="34"/>
+                                <rect key="frame" x="290" y="456" width="34" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -143,34 +143,84 @@
             <objects>
                 <viewController id="RNE-UR-W3f" customClass="WeatherViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xQw-s5-CVn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-lever-du-soleil-500" translatesAutoresizingMaskIntoConstraints="NO" id="62S-fo-JY6">
-                                <rect key="frame" x="107" y="114" width="200" height="130"/>
+                                <rect key="frame" x="107" y="114" width="161" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="0tg-6Y-K1D"/>
-                                    <constraint firstAttribute="width" constant="200" id="NHr-uE-HOK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace météo de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbN-qV-dKJ">
-                                <rect key="frame" x="55" y="245" width="304" height="48.5"/>
+                                <rect key="frame" x="20" y="245.00000000000003" width="335" height="48.333333333333343"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ville:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-SL-24i">
+                                <rect key="frame" x="126" y="434" width="45" height="28.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Température:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auU-N7-134">
+                                <rect key="frame" x="55" y="546" width="116.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-lC-9QP" userLabel="nomVille">
+                                <rect key="frame" x="195" y="438" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kK8-iz-V1s" userLabel="températureDegres">
+                                <rect key="frame" x="195" y="549" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sA-zZ-WvH" userLabel="conditionDescription">
+                                <rect key="frame" x="195" y="496" width="153" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh9-Au-rkQ">
+                                <rect key="frame" x="76" y="493" width="95.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470588235294" green="0.90980392156862744" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="top" secondItem="62S-fo-JY6" secondAttribute="bottom" constant="1" id="NBc-JL-oWX"/>
-                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="leading" secondItem="4LA-S6-LQh" secondAttribute="leading" constant="55" id="dbz-vp-2V4"/>
-                            <constraint firstItem="4LA-S6-LQh" firstAttribute="trailing" secondItem="BbN-qV-dKJ" secondAttribute="trailing" constant="55" id="poX-xd-28i"/>
-                            <constraint firstItem="62S-fo-JY6" firstAttribute="top" secondItem="4LA-S6-LQh" secondAttribute="top" constant="70" id="z87-3m-nud"/>
-                            <constraint firstItem="62S-fo-JY6" firstAttribute="centerX" secondItem="xQw-s5-CVn" secondAttribute="centerX" id="zSE-JH-bg8"/>
+                            <constraint firstItem="62S-fo-JY6" firstAttribute="top" secondItem="4LA-S6-LQh" secondAttribute="top" constant="70" id="3we-oC-vXT"/>
+                            <constraint firstItem="62S-fo-JY6" firstAttribute="leading" secondItem="4LA-S6-LQh" secondAttribute="leading" constant="107" id="IsY-KP-J09"/>
+                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="top" secondItem="62S-fo-JY6" secondAttribute="bottom" constant="1" id="SNN-m0-uPk"/>
+                            <constraint firstItem="BbN-qV-dKJ" firstAttribute="leading" secondItem="4LA-S6-LQh" secondAttribute="leading" constant="20" id="c0j-ZH-Bmg"/>
+                            <constraint firstItem="4LA-S6-LQh" firstAttribute="trailing" secondItem="62S-fo-JY6" secondAttribute="trailing" constant="107" id="ftr-cZ-C5n"/>
+                            <constraint firstItem="4LA-S6-LQh" firstAttribute="trailing" secondItem="BbN-qV-dKJ" secondAttribute="trailing" constant="20" id="lhE-Lq-Y6d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4LA-S6-LQh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="icons8-pluie-25" id="g1i-Sz-0Dv"/>
+                    <connections>
+                        <outlet property="conditionDescriptionLabel" destination="4sA-zZ-WvH" id="uGU-7l-Y0n"/>
+                        <outlet property="nomVilleLabel" destination="g7e-lC-9QP" id="xhj-FH-ZeS"/>
+                        <outlet property="temperatureLabel" destination="kK8-iz-V1s" id="Qrc-9f-zhf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyc-bt-ifx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,36 +231,36 @@
             <objects>
                 <viewController id="87U-6N-chk" customClass="TranslateViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EdW-aI-rUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-langue-100" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-DX-3gu">
-                                <rect key="frame" x="107" y="114" width="200" height="130"/>
+                                <rect key="frame" x="87.666666666666686" y="114" width="200" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="GNw-C9-xIp"/>
                                     <constraint firstAttribute="width" constant="200" id="vQx-Rv-6O0"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue dans l'espace tradution de votre baluchon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvy-L6-i13">
-                                <rect key="frame" x="55" y="245" width="305" height="48.5"/>
+                                <rect key="frame" x="55" y="245.00000000000003" width="266" height="48.333333333333343"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre texte:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTK-4l-64d">
-                                <rect key="frame" x="55" y="464.5" width="93.5" height="24.5"/>
+                                <rect key="frame" x="55.000000000000007" y="380.66666666666669" width="93.666666666666686" height="24.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWw-fR-whm">
-                                <rect key="frame" x="55" y="633" width="85" height="25"/>
+                                <rect key="frame" x="55" y="549" width="85" height="25"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-Md-YYj" userLabel="votreTexte">
-                                <rect key="frame" x="64" y="497" width="286" height="95"/>
+                                <rect key="frame" x="44.666666666666657" y="413" width="286" height="95"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="286" id="bbb-Mf-U9V"/>
@@ -220,8 +270,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jTA-BM-YdG" userLabel="traductionText">
-                                <rect key="frame" x="64" y="666" width="286" height="95"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTA-BM-YdG" userLabel="traductionText">
+                                <rect key="frame" x="44.666666666666657" y="582" width="286" height="95"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="Xch-vo-biX"/>
@@ -232,7 +282,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqP-Ps-ZAi">
-                                <rect key="frame" x="364" y="497" width="20" height="95"/>
+                                <rect key="frame" x="344.66666666666669" y="413" width="20" height="95"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="7o0-B3-v1v"/>

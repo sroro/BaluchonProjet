@@ -27,11 +27,19 @@ let currencyService = CurrencyService()
             case .failure(_):
                 self.alertVC()
             case .success(let exchangeRate):
-                print(exchangeRate)
-                amountChangeLabel.text = String(exchangeRate * Double(amountTextField.text!))
+                
+                guard let amontUnwrapped = self.amountTextField.text else { return }
+                
+                // convertie et deballe l'entrée utilisateur en double
+                guard let amountDouble = Double(amontUnwrapped) else { return }
+                
+                // multiplie taux de change avec entrée utilisateur et le convertie en string pour l'afficher dans le label
+                self.amountChangeLabel.text = String(exchangeRate * amountDouble)
             }
             
         }
+        amountTextField.resignFirstResponder()
+        
     }
     
     

@@ -20,6 +20,7 @@ class TranslateViewController: UIViewController {
     
     @IBAction func validateButton(_ sender: UIButton) {
         recoverText()
+        textToTranslate.resignFirstResponder()
     }
     
     @IBOutlet weak var textTranslate: UITextView!

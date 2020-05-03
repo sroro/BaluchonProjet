@@ -1,16 +1,14 @@
 //
-//  CurrencyService.swift
+//  WeatherService.swift
 //  Baluchon
 //
-//  Created by Rodolphe Schnetzer on 22/04/2020.
+//  Created by Rodolphe Schnetzer on 02/05/2020.
 //  Copyright © 2020 Rodolphe Schnetzer. All rights reserved.
 //
 
 import Foundation
 
-class CurrencyService {
-    
-    // MARK: -  appel réseau
+class WeatherService {
     
     
     let session : URLSession
@@ -26,17 +24,16 @@ class CurrencyService {
         case noData, noResponse, undecodable
     }
     
-    
-    // etape 1: création de la requête , devise permet de choisir la devise de change
-    func getExchange(devise: String, callback: @escaping (Result<Double, Error>) -> Void) {
-        guard  let fixerUrl = URL(string: "http://data.fixer.io/api/latest?access_key=892b6eed783bbba6e718701a3e805fe1&symbols=\(devise)") else { return }
+    func getWeather( callback: @escaping (Result<String, Error> ) -> Void) {
+       guard let weatherUrl = URL(string: "api.openweathermap.org/data/2.5/weather?q=paris&appid=8b01aef39585f7ff04d3d616819e17c3&units=metric&lang=fr") else {return}
         
+            
         task?.cancel()
-        task = session.dataTask(with: fixerUrl) { (data, response, error) in
+        
+        session.dataTask(with: weatherUrl) { (data,response,error) in
             DispatchQueue.main.async {
                 
-                
-                guard let data = data,error == nil  else {
+                guard let data = data, error == nil else {
                     callback(.failure(NetworkError.noData))
                     return
                 }
@@ -48,12 +45,14 @@ class CurrencyService {
                 }
                 
                 // on décode la réponse reçu en JSON
-                guard let responseJSON = try? JSONDecoder().decode(FixerData.self, from: data),
-                    let currency = responseJSON.rates[devise] else { // responseJSON.rates
+                 guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data),
+                    let weather = responseJSON.weatherDescription else {
                         callback(.failure(NetworkError.undecodable))
                         return
                 }
-                callback(.success(currency))
+                callback(.success(weather))
+                print(weather)
+                
             }
         }
         task?.resume()
@@ -61,4 +60,5 @@ class CurrencyService {
     
     
     
+        
 }

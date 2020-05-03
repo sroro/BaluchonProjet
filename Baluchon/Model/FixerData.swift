@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FixerData: Decodable {
+struct FixerData: Decodable {
    
     let rates: [String:Double]
 }
