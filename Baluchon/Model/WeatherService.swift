@@ -24,13 +24,12 @@ class WeatherService {
         case noData, noResponse, undecodable
     }
     
-    func getWeather( callback: @escaping (Result<String, Error> ) -> Void) {
-       guard let weatherUrl = URL(string: "api.openweathermap.org/data/2.5/weather?q=paris&appid=8b01aef39585f7ff04d3d616819e17c3&units=metric&lang=fr") else {return}
+    func getWeather( callback: @escaping (Result<WeatherData, Error> ) -> Void) {
+        guard let weatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=paris&appid=8b01aef39585f7ff04d3d616819e17c3&units=metric&lang=fr") else {return}
         
-            
+        
         task?.cancel()
-        
-        session.dataTask(with: weatherUrl) { (data,response,error) in
+        task = session.dataTask(with: weatherUrl, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 
                 guard let data = data, error == nil else {
@@ -45,20 +44,29 @@ class WeatherService {
                 }
                 
                 // on décode la réponse reçu en JSON
-                 guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data),
-                    let weather = responseJSON.weatherDescription else {
+                guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
                         callback(.failure(NetworkError.undecodable))
                         return
                 }
-                callback(.success(weather))
-                print(weather)
+                callback(.success(responseJSON))
+               
                 
             }
-        }
+            
+            
+        })
         task?.resume()
     }
     
+    /* private static func createWeatherRequest() -> URLRequest {
+     var request = URLRequest(url: weatherUrl )
+     request.httpMethod = "POST"
+     
+     let body = "q=paris&appid=8b01aef39585f7ff04d3d616819e17c3&units=metric&lang=fr"
+     request.httpBody = body.data(using: .utf8)
+     
+     return request
+     } */
     
     
-        
 }

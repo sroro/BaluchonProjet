@@ -29,10 +29,9 @@ class WeatherViewController: UIViewController {
             case .failure(_):
                 self.alertVC()
             case .success(let weatherTest):
+ 
                 
-                
-                // aaffiche nom ville
-                self.conditionDescriptionLabel.text = weatherTest
+//                self.conditionDescriptionLabel.text = weatherTest
                 print(weatherTest)
             }
         }

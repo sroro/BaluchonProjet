@@ -9,13 +9,26 @@
 
 import Foundation
 
-// MARK: - Main
+
 struct WeatherData: Decodable {
     
-    let temp: [String:Double]
-    let weatherDescription: String?
-    let country: [String:String]
-    
+    let weather: [Weather]
+    let main: Main
+    let name: String
+}
+
+
+
+// MARK: - Main
+struct Main: Decodable {
+    let temp: Double
+}
+
+
+// MARK: - Weather
+struct Weather: Decodable {
+    let  description: String
+
 }
 
 
