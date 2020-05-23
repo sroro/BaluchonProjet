@@ -34,7 +34,8 @@ let currencyService = CurrencyService()
                 guard let amountDouble = Double(amontUnwrapped) else { return }
                 
                 // multiplie taux de change avec entrée utilisateur et le convertie en string pour l'afficher dans le label
-                self.amountChangeLabel.text = String(exchangeRate * amountDouble)
+                self.amountChangeLabel.text = ("\(String(exchangeRate * amountDouble)) $")
+                
             }
             
         }

@@ -12,9 +12,9 @@ class WeatherViewController: UIViewController {
     
     let weather = WeatherService()
     
-    @IBOutlet weak var nomVilleLabel: UILabel!
-    @IBOutlet weak var conditionDescriptionLabel: UILabel!
-    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet var cityLabels: [UILabel]!
+    @IBOutlet var conditionLabels: [UILabel]!
+    @IBOutlet var temperatureLabels: [UILabel]!
     
     
     func alertVC() {
@@ -28,16 +28,20 @@ class WeatherViewController: UIViewController {
             switch result {
             case .failure(_):
                 self.alertVC()
-            case .success(let weatherTest):
- 
+            case .success(let weatherData):
                 
-//                self.conditionDescriptionLabel.text = weatherTest
-                print(weatherTest)
+                for i in 0..<2 {
+                    self.setupUI(cityLabel: self.cityLabels[i], conditionLabel: self.conditionLabels[i], temperatureLabel: self.temperatureLabels[i], weatherData: weatherData.list[i])
+                }
             }
         }
     }
     
-    
+    func setupUI(cityLabel: UILabel, conditionLabel: UILabel, temperatureLabel: UILabel, weatherData: List) { 
+        cityLabel.text = weatherData.name
+        conditionLabel.text = weatherData.weather[0].description
+        temperatureLabel.text = "\(weatherData.main.temp) °C "
+    }
 }
 
 
