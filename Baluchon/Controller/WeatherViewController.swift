@@ -17,11 +17,11 @@ class WeatherViewController: UIViewController {
     @IBOutlet var temperatureLabels: [UILabel]!
     
     
-    func alertVC() {
-        let alertVC = UIAlertController(title: "Erreur", message: "Réseau non disponible", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC,animated:true,completion:nil)
-    }
+    @IBOutlet var test: [UIImageView]!
+    
+    @IBOutlet weak var imageParis: UIImageView!
+    @IBOutlet weak var imageNY: UIImageView!
+    
     
     override func viewDidLoad() {
         weather.getWeather() { result in
@@ -29,7 +29,7 @@ class WeatherViewController: UIViewController {
             case .failure(_):
                 self.alertVC()
             case .success(let weatherData):
-                
+                print(weatherData)
                 for i in 0..<2 {
                     self.setupUI(cityLabel: self.cityLabels[i], conditionLabel: self.conditionLabels[i], temperatureLabel: self.temperatureLabels[i], weatherData: weatherData.list[i])
                 }
@@ -37,11 +37,19 @@ class WeatherViewController: UIViewController {
         }
     }
     
+    // MARK: -- Méthodes
     func setupUI(cityLabel: UILabel, conditionLabel: UILabel, temperatureLabel: UILabel, weatherData: List) { 
         cityLabel.text = weatherData.name
         conditionLabel.text = weatherData.weather[0].description
         temperatureLabel.text = "\(weatherData.main.temp) °C "
     }
+    
+    func alertVC() {
+        let alertVC = UIAlertController(title: "Erreur", message: "Réseau non disponible", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC,animated:true,completion:nil)
+    }
+    
 }
 
 

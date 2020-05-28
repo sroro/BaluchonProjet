@@ -78,6 +78,4 @@ let currencyService = CurrencyService()
         }
     }
     
-    
-    
 }

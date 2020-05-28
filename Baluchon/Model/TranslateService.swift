@@ -1,16 +1,14 @@
 //
-//  WeatherService.swift
+//  TranslateService.swift
 //  Baluchon
 //
-//  Created by Rodolphe Schnetzer on 02/05/2020.
+//  Created by Rodolphe Schnetzer on 25/05/2020.
 //  Copyright © 2020 Rodolphe Schnetzer. All rights reserved.
 //
-//2988507  5128581
 
 import Foundation
 
-class WeatherService {
-    
+class TranslateService {
     
     let session : URLSession
     var task: URLSessionDataTask?
@@ -19,42 +17,37 @@ class WeatherService {
         self.session = session
     }
     
-    
-    // enum permet la gestion des differentes erreurs qui est de type Error
     enum NetworkError: Error {
         case noData, noResponse, undecodable
     }
     
-    func getWeather(callback: @escaping (Result<WeatherData, Error> ) -> Void) {
-        
-        guard let weatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/group?id=2988507,5128581&units=metric&appid=8b01aef39585f7ff04d3d616819e17c3&lang=fr") else {return}
+    func getTranslate(text: String, callback: @escaping (Result<TranslateData, Error> ) -> Void) {
+        guard let textEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        guard let translaterUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAYPTSUKkQREezQHLdzUbTwPiMesKintas&q=\(textEncoded)&source=fr&target=en&format=text") else {return}
         
         task?.cancel()
-        task = session.dataTask(with: weatherUrl, completionHandler: { (data, response, error) in
+        task = session.dataTask(with: translaterUrl){(data,response,error) in
             DispatchQueue.main.async {
-                
-                guard let data = data, error == nil else {
+                guard let data = data,error == nil else {
                     callback(.failure(NetworkError.noData))
                     return
                 }
                 
-                // vérifie si le statut code = 200 = OK
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(.failure(NetworkError.noResponse))
                     return
                 }
                 
-                // on décode la réponse reçu en JSON
-                guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
+                guard let responseJson = try? JSONDecoder().decode(TranslateData.self , from: data) else {
                     callback(.failure(NetworkError.undecodable))
                     return
                 }
-                callback(.success(responseJSON))
-               
+                callback(.success(responseJson))
+            
             }
             
-        })
+        }
         task?.resume()
-        
     }
 }
+

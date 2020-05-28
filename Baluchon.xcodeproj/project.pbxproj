@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94020CA4247BC8B200F49F9A /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94020CA3247BC8B200F49F9A /* TranslateService.swift */; };
+		94020CA6247BCD0B00F49F9A /* TranslateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94020CA5247BCD0B00F49F9A /* TranslateData.swift */; };
 		940F8B002463957700078EB1 /* TestFakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F8AFF2463957700078EB1 /* TestFakeResponseData.swift */; };
 		940F8B022463AF1500078EB1 /* TestFakeURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F8B012463AF1500078EB1 /* TestFakeURLSession.swift */; };
 		942406EC245B270A00EEAE54 /* Fixer.json in Resources */ = {isa = PBXBuildFile; fileRef = 942406EB245B270A00EEAE54 /* Fixer.json */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94020CA3247BC8B200F49F9A /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		94020CA5247BCD0B00F49F9A /* TranslateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateData.swift; sourceTree = "<group>"; };
 		940F8AFF2463957700078EB1 /* TestFakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFakeResponseData.swift; sourceTree = "<group>"; };
 		940F8B012463AF1500078EB1 /* TestFakeURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFakeURLSession.swift; sourceTree = "<group>"; };
 		942406EB245B270A00EEAE54 /* Fixer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fixer.json; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				9439BE0824585F1200368A93 /* FixerData.swift */,
 				94D75B28245D1D8F00DE2B86 /* WeatherService.swift */,
 				94D75B2A245D212E00DE2B86 /* WeatherData.swift */,
+				94020CA3247BC8B200F49F9A /* TranslateService.swift */,
+				94020CA5247BCD0B00F49F9A /* TranslateData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,7 +304,9 @@
 				94EA9A5B24507120001BA0B5 /* CurrencyService.swift in Sources */,
 				945DFFF9244C720C004B4458 /* WeatherViewController.swift in Sources */,
 				9435879C2449F2D100A1493C /* CurrencyViewController.swift in Sources */,
+				94020CA4247BC8B200F49F9A /* TranslateService.swift in Sources */,
 				9439BE0924585F1200368A93 /* FixerData.swift in Sources */,
+				94020CA6247BCD0B00F49F9A /* TranslateData.swift in Sources */,
 				94D75B2B245D212E00DE2B86 /* WeatherData.swift in Sources */,
 				943587702449E6B600A1493C /* SceneDelegate.swift in Sources */,
 			);

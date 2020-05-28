@@ -102,9 +102,9 @@ class CurrencyServiceTestCase: XCTestCase {
     }
     
     func testUndecodableData() {
-        let weather = WeatherService(session: TestFakeURLSession(data:TestFakeResponseData.incorrectData, response: TestFakeResponseData.responseOK , error: nil))
+        let fixer = CurrencyService(session: TestFakeURLSession(data:TestFakeResponseData.incorrectData, response: TestFakeResponseData.responseOK , error: nil))
         let expectation = XCTestExpectation(description: "wait for queue change")
-               weather.getWeather { (result) in
+        fixer.getExchange (devise: "USD"){ (result) in
                guard case .failure (let error ) = result  else {
                    XCTFail("testgetWeatherShouldPostFailedCallbackIfError fail")
                    return
