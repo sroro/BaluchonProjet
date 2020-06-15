@@ -8,13 +8,13 @@
 
 import Foundation
 
-class CurrencyService {
+final class CurrencyService {
     
     // MARK: -  appel réseau
     
     
-    let session : URLSession
-    var task: URLSessionDataTask?
+    private let session : URLSession
+    private var task: URLSessionDataTask?
     
     init(session:URLSession = URLSession(configuration: .default)){
         self.session = session
@@ -34,19 +34,17 @@ class CurrencyService {
         task?.cancel()
         task = session.dataTask(with: fixerUrl) { (data, response, error) in
             DispatchQueue.main.async {
-                
-                
+            
                 guard let data = data,error == nil  else {
                     callback(.failure(NetworkError.noData))
                     return
                 }
-                
+         
                 // vérifie si le statut code = 200 = OK
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(.failure(NetworkError.noResponse))
                     return
                 }
-                
                 // on décode la réponse reçu en JSON
                 guard let responseJSON = try? JSONDecoder().decode(FixerData.self, from: data),
                     let currency = responseJSON.rates[devise] else { // responseJSON.rates
@@ -58,7 +56,4 @@ class CurrencyService {
         }
         task?.resume()
     }
-    
-    
-    
 }

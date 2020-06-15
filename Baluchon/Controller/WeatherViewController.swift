@@ -8,17 +8,14 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+final class WeatherViewController: UIViewController {
     
-    let weather = WeatherService()
+    private let weather = WeatherService()
     
     @IBOutlet var cityLabels: [UILabel]!
     @IBOutlet var conditionLabels: [UILabel]!
     @IBOutlet var temperatureLabels: [UILabel]!
-    
-    
     @IBOutlet var test: [UIImageView]!
-    
     @IBOutlet weak var imageParis: UIImageView!
     @IBOutlet weak var imageNY: UIImageView!
     
@@ -27,9 +24,8 @@ class WeatherViewController: UIViewController {
         weather.getWeather() { result in
             switch result {
             case .failure(_):
-                self.alertVC()
+                self.alert()
             case .success(let weatherData):
-                print(weatherData)
                 for i in 0..<2 {
                     self.setupUI(cityLabel: self.cityLabels[i], conditionLabel: self.conditionLabels[i], temperatureLabel: self.temperatureLabels[i], weatherData: weatherData.list[i])
                 }
@@ -43,13 +39,6 @@ class WeatherViewController: UIViewController {
         conditionLabel.text = weatherData.weather[0].description
         temperatureLabel.text = "\(weatherData.main.temp) °C "
     }
-    
-    func alertVC() {
-        let alertVC = UIAlertController(title: "Erreur", message: "Réseau non disponible", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC,animated:true,completion:nil)
-    }
-    
 }
 
 

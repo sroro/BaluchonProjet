@@ -8,24 +8,30 @@
 
 import UIKit
 
-class CurrencyViewController: UIViewController {
+final class CurrencyViewController: UIViewController {
     
-let currencyService = CurrencyService()
+    private let currencyService = CurrencyService()
+    private var target = "USD"
+    private var devise = ["USD" , "AED" , "GBP" , "CAD", "CHF"]
     
-     override func viewDidLoad() {
-           super.viewDidLoad()
-           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-       }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     
+    @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var amountTextField: UITextField!
- 
-    @IBAction func validateButton(_ sender: UIButton) {
-        currencyService.getExchange(devise: "USD") { result in
+    @IBOutlet weak var amountChangeLabel: UILabel!
+    @IBAction private func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        amountTextField.resignFirstResponder()
+    }
+    @IBAction private func validateButton(_ sender: UIButton) {
+        currencyService.getExchange(devise: target) { result in
             switch result {
             case .failure(_):
-                self.alertVC()
+                self.alert()
             case .success(let exchangeRate):
                 
                 guard let amontUnwrapped = self.amountTextField.text else { return }
@@ -34,48 +40,45 @@ let currencyService = CurrencyService()
                 guard let amountDouble = Double(amontUnwrapped) else { return }
                 
                 // multiplie taux de change avec entrée utilisateur et le convertie en string pour l'afficher dans le label
-                self.amountChangeLabel.text = ("\(String(exchangeRate * amountDouble)) $")
-                
+                self.amountChangeLabel.text = ("\(String(exchangeRate * amountDouble)) ")
             }
-            
         }
         amountTextField.resignFirstResponder()
-        
     }
-    
-    
-    
-    
-    @IBOutlet weak var amountChangeLabel: UILabel!
-    
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        amountTextField.resignFirstResponder()
-    }
-    
-    
     
     // MARK: - méthodes
     
-    func alertVC () {   
-        let alertVC = UIAlertController(title: "Error", message: "Taux de change impossible", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil)) 
-        present(alertVC, animated: true, completion: nil)
-    }
-    
-
     // gérer le clavier
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc
+    func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
     }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
+    
+    @objc
+    func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
+}
+
+extension CurrencyViewController : UIPickerViewDataSource , UIPickerViewDelegate {
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return devise.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return devise[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let test = devise[row]
+        target = test
+    }
 }

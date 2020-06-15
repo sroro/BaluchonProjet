@@ -8,10 +8,10 @@
 
 import Foundation
 
-class TranslateService {
+final class TranslateService {
     
-    let session : URLSession
-    var task: URLSessionDataTask?
+    private let session : URLSession
+    private var task: URLSessionDataTask?
     
     init(session:URLSession = URLSession(configuration: .default)){
         self.session = session
@@ -21,10 +21,11 @@ class TranslateService {
         case noData, noResponse, undecodable
     }
     
-    func getTranslate(text: String, callback: @escaping (Result<TranslateData, Error> ) -> Void) {
+    /// recupere la traduction d'un paragraphe vers une autre langue
+    func getTranslate(text: String, target: String, callback: @escaping (Result<TranslateData, Error> ) -> Void) {
+        //encodage  de l'url pour éviter les espaces
         guard let textEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
-        guard let translaterUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAYPTSUKkQREezQHLdzUbTwPiMesKintas&q=\(textEncoded)&source=fr&target=en&format=text") else {return}
-        
+        guard let translaterUrl = URL(string: "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAYPTSUKkQREezQHLdzUbTwPiMesKintas&q=\(textEncoded)&source=fr&target=\(target)&format=text") else {return}   
         task?.cancel()
         task = session.dataTask(with: translaterUrl){(data,response,error) in
             DispatchQueue.main.async {
@@ -32,20 +33,16 @@ class TranslateService {
                     callback(.failure(NetworkError.noData))
                     return
                 }
-                
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(.failure(NetworkError.noResponse))
                     return
                 }
-                
                 guard let responseJson = try? JSONDecoder().decode(TranslateData.self , from: data) else {
                     callback(.failure(NetworkError.undecodable))
                     return
                 }
                 callback(.success(responseJson))
-            
             }
-            
         }
         task?.resume()
     }

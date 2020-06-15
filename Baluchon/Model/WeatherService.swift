@@ -9,17 +9,16 @@
 
 import Foundation
 
-class WeatherService {
+final class WeatherService {
     
     
-    let session : URLSession
-    var task: URLSessionDataTask?
+    private let session : URLSession
+    private var task: URLSessionDataTask?
     
     init(session:URLSession = URLSession(configuration: .default)){
         self.session = session
     }
-    
-    
+
     // enum permet la gestion des differentes erreurs qui est de type Error
     enum NetworkError: Error {
         case noData, noResponse, undecodable
@@ -37,24 +36,19 @@ class WeatherService {
                     callback(.failure(NetworkError.noData))
                     return
                 }
-                
                 // vérifie si le statut code = 200 = OK
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(.failure(NetworkError.noResponse))
                     return
                 }
-                
                 // on décode la réponse reçu en JSON
                 guard let responseJSON = try? JSONDecoder().decode(WeatherData.self, from: data) else {
                     callback(.failure(NetworkError.undecodable))
                     return
                 }
                 callback(.success(responseJSON))
-               
             }
-            
         })
         task?.resume()
-        
     }
 }
