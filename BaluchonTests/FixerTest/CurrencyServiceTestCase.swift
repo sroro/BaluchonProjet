@@ -30,14 +30,11 @@ class CurrencyServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
     }
     
-    
     // aucune données
     func testgetExchangeReceiveNoData() {
         
         let fixerExchange = CurrencyService(session:TestFakeURLSession(data: nil, response: nil, error: nil))
-        
         let expectation = XCTestExpectation(description: "wait for queue change")
-        
         fixerExchange.getExchange(devise: "USD") { (result) in
             
             guard case .failure(let error) = result else {
@@ -68,7 +65,7 @@ class CurrencyServiceTestCase: XCTestCase {
     
     
     func testgetExchangeCorrectDataAndResponse() {
-    
+        
         let fixerExchange = CurrencyService(session: TestFakeURLSession(data:TestFakeResponseData.fixerCorrectData , response: TestFakeResponseData.responseOK , error: nil))
         let expectation = XCTestExpectation(description: "wait for queue change")
         

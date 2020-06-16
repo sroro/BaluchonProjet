@@ -24,8 +24,8 @@ final class WeatherService {
         case noData, noResponse, undecodable
     }
     
+    ///Récupère conditions météorologique
     func getWeather(callback: @escaping (Result<WeatherData, Error> ) -> Void) {
-        
         guard let weatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/group?id=2988507,5128581&units=metric&appid=8b01aef39585f7ff04d3d616819e17c3&lang=fr") else {return}
         
         task?.cancel()

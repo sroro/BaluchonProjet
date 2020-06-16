@@ -12,7 +12,6 @@ final class CurrencyService {
     
     // MARK: -  appel réseau
     
-    
     private let session : URLSession
     private var task: URLSessionDataTask?
     
@@ -20,13 +19,11 @@ final class CurrencyService {
         self.session = session
     }
     
-    
     // enum permet la gestion des differentes erreurs qui est de type Error
     enum NetworkError: Error {
         case noData, noResponse, undecodable
     }
-    
-    
+  
     // etape 1: création de la requête , devise permet de choisir la devise de change
     func getExchange(devise: String, callback: @escaping (Result<Double, Error>) -> Void) {
         guard  let fixerUrl = URL(string: "http://data.fixer.io/api/latest?access_key=892b6eed783bbba6e718701a3e805fe1&symbols=\(devise)") else { return }
@@ -34,7 +31,6 @@ final class CurrencyService {
         task?.cancel()
         task = session.dataTask(with: fixerUrl) { (data, response, error) in
             DispatchQueue.main.async {
-            
                 guard let data = data,error == nil  else {
                     callback(.failure(NetworkError.noData))
                     return

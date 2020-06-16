@@ -11,7 +11,7 @@ import UIKit
 final class TranslateViewController: UIViewController {
    private let translate = TranslateService()
    private var target = "en"
-   private var languages = [("en","Anglais"),("de","Allemande"),("es","Espagnol"),("it", "Italien"),("ar","Arabe")] // utilisation un tableau de tuples
+   private var languages = [("en","Anglais"),("de","Allemand"),("es","Espagnol"),("it", "Italien"),("ar","Arabe")] // utilisation un tableau de tuples
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +36,10 @@ final class TranslateViewController: UIViewController {
                 self.alert()
             case .success(let translateData):
                 self.textTranslate.text = translateData.data.translations[0].translatedText
-                
             }
         }
         textToTranslate.resignFirstResponder()
     }
-    //MARK: -- Méthodes PickerView
     
     //MARK: - Méthodes
 

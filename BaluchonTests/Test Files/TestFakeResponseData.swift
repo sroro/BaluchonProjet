@@ -22,14 +22,12 @@ class TestFakeResponseData {
     static var fixerCorrectData: Data {
         let bundle = Bundle(for: TestFakeResponseData.self)
         let url = bundle.url(forResource: "Fixer", withExtension: "json")!
-        
         return try! Data(contentsOf: url)
     }
     
     static var weatherCorrectData: Data {
         let bundle = Bundle(for: TestFakeResponseData.self)
         let url = bundle.url(forResource: "Weather", withExtension: "json")!
-        
         return try! Data(contentsOf: url)
     }
     
@@ -38,8 +36,7 @@ class TestFakeResponseData {
         let url = bundle.url(forResource: "Translate", withExtension: "json")!
           return try! Data(contentsOf: url)
     }
-    
-    
+  
     // 3-Json endommagé
     static let incorrectData = "erreur".data(using: .utf8)
     

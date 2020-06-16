@@ -19,8 +19,7 @@ final class CurrencyViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    
+   
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var amountChangeLabel: UILabel!
@@ -39,9 +38,11 @@ final class CurrencyViewController: UIViewController {
                 // convertie et deballe l'entrée utilisateur en double
                 guard let amountDouble = Double(amontUnwrapped) else { return }
                 
-                // multiplie taux de change avec entrée utilisateur et le convertie en string pour l'afficher dans le label
-                self.amountChangeLabel.text = ("\(String(exchangeRate * amountDouble)) ")
-            }
+                // multiplie taux de change avec entrée utilisateur et le reduit à 2 chiffres apres virgule
+                let amountReduce = self.formatResult(result: amountDouble * exchangeRate)
+         
+                self.amountChangeLabel.text = amountReduce
+            }  
         }
         amountTextField.resignFirstResponder()
     }
@@ -63,6 +64,15 @@ final class CurrencyViewController: UIViewController {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    // reduce number 2 after comma
+    func formatResult(result: Double) -> String! {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        guard let resultFormated = formatter.string(from: NSNumber(value: result)) else { return nil
+        }
+        return resultFormated
     }
 }
 
