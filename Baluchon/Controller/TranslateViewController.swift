@@ -36,6 +36,7 @@ final class TranslateViewController: UIViewController {
                 self.alert()
             case .success(let translateData):
                 self.textTranslate.text = translateData.data.translations[0].translatedText
+
             }
         }
         textToTranslate.resignFirstResponder()
@@ -43,7 +44,6 @@ final class TranslateViewController: UIViewController {
     
     //MARK: - Méthodes
 
-    // monter la vue de l'ecran de la taille du clavier
     @objc
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -52,8 +52,7 @@ final class TranslateViewController: UIViewController {
             }
         }
     }
-    
-    // baisser la vue de l'ecran
+
     @objc
     func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
@@ -66,20 +65,20 @@ final class TranslateViewController: UIViewController {
 
 extension TranslateViewController :  UIPickerViewDelegate , UIPickerViewDataSource {
    
-      //Gère le nbr de colonne dans le picker
+      //Manage the number of columns in the picker
       func numberOfComponents(in pickerView: UIPickerView) -> Int {
           return 1
       }
-      //Gère le nbr d'elmt a afficher
+      //Gmanage the number of elements in the picker
       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
           return languages.count
       }
-      // gère quoi afficher dans le picker
+      // gmanage hat show in the picker
       func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
           return languages[row].1 // .1 accède a la 2e valeur dans le tuple
           
       }
-      // accède a la scd valeur du tuple et le met dans la var target qui est utiliser dans la closure getTranslate
+      // access the scd value of the tuple and put it in the var target which is used in the getTranslate closure
       func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
           let languageSelected = languages[row]
           target = languageSelected.0 //.0 accède a la 2e valeur dans le tuple

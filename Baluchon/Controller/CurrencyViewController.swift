@@ -26,6 +26,7 @@ final class CurrencyViewController: UIViewController {
     @IBAction private func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         amountTextField.resignFirstResponder()
     }
+    
     @IBAction private func validateButton(_ sender: UIButton) {
         currencyService.getExchange(devise: target) { result in
             switch result {
@@ -35,10 +36,10 @@ final class CurrencyViewController: UIViewController {
                 
                 guard let amontUnwrapped = self.amountTextField.text else { return }
                 
-                // convertie et deballe l'entrée utilisateur en double
+                // converted and unpacks duplicate user input
                 guard let amountDouble = Double(amontUnwrapped) else { return }
                 
-                // multiplie taux de change avec entrée utilisateur et le reduit à 2 chiffres apres virgule
+                // multiplies exchange rate with user input and reduces it to 2 digits after comma
                 let amountReduce = self.formatResult(result: amountDouble * exchangeRate)
          
                 self.amountChangeLabel.text = amountReduce
@@ -49,7 +50,7 @@ final class CurrencyViewController: UIViewController {
     
     // MARK: - méthodes
     
-    // gérer le clavier
+    // show or hide keyboard
     @objc
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

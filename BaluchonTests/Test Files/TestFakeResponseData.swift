@@ -10,7 +10,7 @@ import Foundation
 
 class TestFakeResponseData {
     
-    // 1-simuler 2 types de reponses.
+    // 1-simulate 2 types of responses.
     static let responseOK = HTTPURLResponse(url: URL(string:"https://openclassrooms.com")!, statusCode: 200, httpVersion: nil, headerFields: [:])
     static let responseKO = HTTPURLResponse(url: URL(string:"https://openclassrooms.com")!, statusCode: 500, httpVersion: nil, headerFields: [:])
     
@@ -18,7 +18,7 @@ class TestFakeResponseData {
     class FixerError : Error { }
     static let error = FixerError()
     
-    // 2-Json avec données correct
+    // 2-Json with correct data
     static var fixerCorrectData: Data {
         let bundle = Bundle(for: TestFakeResponseData.self)
         let url = bundle.url(forResource: "Fixer", withExtension: "json")!
@@ -37,7 +37,7 @@ class TestFakeResponseData {
           return try! Data(contentsOf: url)
     }
   
-    // 3-Json endommagé
+    // 3-Json damaged
     static let incorrectData = "erreur".data(using: .utf8)
     
 }

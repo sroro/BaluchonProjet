@@ -19,12 +19,12 @@ final class CurrencyService {
         self.session = session
     }
     
-    // enum permet la gestion des differentes erreurs qui est de type Error
+    // enum allows the management of different errors which is of type Error
     enum NetworkError: Error {
         case noData, noResponse, undecodable
     }
   
-    // etape 1: création de la requête , devise permet de choisir la devise de change
+    // step 1: creation of the request, currency allows to choose the exchange currency
     func getExchange(devise: String, callback: @escaping (Result<Double, Error>) -> Void) {
         guard  let fixerUrl = URL(string: "http://data.fixer.io/api/latest?access_key=892b6eed783bbba6e718701a3e805fe1&symbols=\(devise)") else { return }
         
@@ -36,12 +36,12 @@ final class CurrencyService {
                     return
                 }
          
-                // vérifie si le statut code = 200 = OK
+                // check if the status code = 200 = OK
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     callback(.failure(NetworkError.noResponse))
                     return
                 }
-                // on décode la réponse reçu en JSON
+                // we decode the response received in JSON
                 guard let responseJSON = try? JSONDecoder().decode(FixerData.self, from: data),
                     let currency = responseJSON.rates[devise] else { // responseJSON.rates
                         callback(.failure(NetworkError.undecodable))
