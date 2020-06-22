@@ -10,6 +10,7 @@ import UIKit
 
 final class CurrencyViewController: UIViewController {
     
+    // MARK: - properties
     private let currencyService = CurrencyService()
     private var target = "USD"
     private var devise = ["USD" , "AED" , "GBP" , "CAD", "CHF"]
@@ -19,7 +20,8 @@ final class CurrencyViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-   
+    
+    // MARK: - IBOutlet & IBActions
     @IBOutlet weak var currencyPicker: UIPickerView!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var amountChangeLabel: UILabel!
@@ -28,22 +30,24 @@ final class CurrencyViewController: UIViewController {
     }
     
     @IBAction private func validateButton(_ sender: UIButton) {
-        currencyService.getExchange(devise: target) { result in
+        currencyService.getExchange(devise: target) { [weak self] result in
             switch result {
             case .failure(_):
-                self.alert()
+                self?.alert()
             case .success(let exchangeRate):
-                
-                guard let amontUnwrapped = self.amountTextField.text else { return }
-                
-                // converted and unpacks duplicate user input
-                guard let amountDouble = Double(amontUnwrapped) else { return }
-                
-                // multiplies exchange rate with user input and reduces it to 2 digits after comma
-                let amountReduce = self.formatResult(result: amountDouble * exchangeRate)
-         
-                self.amountChangeLabel.text = amountReduce
-            }  
+                DispatchQueue.main.async {
+                    
+                    guard let amontUnwrapped = self?.amountTextField.text else { return }
+                    
+                    // converted and unpacks duplicate user input
+                    guard let amountDouble = Double(amontUnwrapped) else { return }
+                    
+                    // multiplies exchange rate with user input and reduces it to 2 digits after comma
+                    let amountReduce = self?.formatResult(result: amountDouble * exchangeRate)
+                    
+                    self?.amountChangeLabel.text = amountReduce
+                }
+            }
         }
         amountTextField.resignFirstResponder()
     }

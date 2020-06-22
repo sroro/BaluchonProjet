@@ -11,17 +11,18 @@ import Foundation
 
 final class WeatherService {
     
+    // MARK: - properties
     
     private let session : URLSession
     private var task: URLSessionDataTask?
     
+    // MARK: - initializer
+    
     init(session:URLSession = URLSession(configuration: .default)){
         self.session = session
     }
-
-    enum NetworkError: Error {
-        case noData, noResponse, undecodable
-    }
+    
+    // MARK: - Methods
     
     ///Récupère conditions météorologique
     func getWeather(callback: @escaping (Result<WeatherData, Error> ) -> Void) {
@@ -29,7 +30,6 @@ final class WeatherService {
         
         task?.cancel()
         task = session.dataTask(with: weatherUrl, completionHandler: { (data, response, error) in
-            DispatchQueue.main.async {
                 
                 guard let data = data, error == nil else {
                     callback(.failure(NetworkError.noData))
@@ -45,7 +45,6 @@ final class WeatherService {
                     return
                 }
                 callback(.success(responseJSON))
-            }
         })
         task?.resume()
     }

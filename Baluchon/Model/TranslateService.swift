@@ -10,16 +10,18 @@ import Foundation
 
 final class TranslateService {
     
+    // MARK: - properties
+    
     private let session : URLSession
     private var task: URLSessionDataTask?
+    
+    // MARK: - initializer
     
     init(session:URLSession = URLSession(configuration: .default)){
         self.session = session
     }
     
-    enum NetworkError: Error {
-        case noData, noResponse, undecodable
-    }
+    // MARK: - Methods
     
     /// recupere la traduction d'un paragraphe vers une autre langue
     func getTranslate(text: String, target: String, callback: @escaping (Result<TranslateData, Error> ) -> Void) {

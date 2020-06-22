@@ -10,7 +10,11 @@ import UIKit
 
 final class WeatherViewController: UIViewController {
     
+    // MARK: - properties
+    
     private let weather = WeatherService()
+    
+    // MARK: - IBOutlet & IBActions
     
     @IBOutlet var cityLabels: [UILabel]!
     @IBOutlet var conditionLabels: [UILabel]!
@@ -26,8 +30,10 @@ final class WeatherViewController: UIViewController {
             case .failure(_):
                 self.alert()
             case .success(let weatherData):
-                for i in 0..<2 {
-                    self.setupUI(cityLabel: self.cityLabels[i], conditionLabel: self.conditionLabels[i], temperatureLabel: self.temperatureLabels[i], weatherData: weatherData.list[i])
+                DispatchQueue.main.async {
+                    for i in 0..<2 {
+                        self.setupUI(cityLabel: self.cityLabels[i], conditionLabel: self.conditionLabels[i], temperatureLabel: self.temperatureLabels[i], weatherData: weatherData.list[i])
+                    }
                 }
             }
         }

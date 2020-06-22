@@ -8,7 +8,9 @@
 
 import Foundation
 
+
 // MARK: - Welcome
+// use Decodable for decode Json
 struct TranslateData: Decodable {
     let data: DataClass
 }
