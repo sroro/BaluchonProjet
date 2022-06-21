@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7h-oU-45Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7h-oU-45Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="75" id="yxo-K0-FVh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="evX-qu-Y82">
@@ -85,9 +86,9 @@
                                                         <rect key="frame" x="140" y="0.0" width="30" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="tintColor" systemColor="darkTextColor"/>
                                                         <state key="normal" title="&gt;">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="validateButton:" destination="4Am-fK-EM1" eventType="touchUpInside" id="y5S-ks-d2m"/>
@@ -148,6 +149,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DhM-g6-zSZ"/>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -161,7 +163,6 @@
                             <constraint firstItem="a6M-VW-agj" firstAttribute="top" secondItem="DhM-g6-zSZ" secondAttribute="top" constant="20" id="nxa-ny-8Vv"/>
                             <constraint firstItem="evX-qu-Y82" firstAttribute="leading" secondItem="DhM-g6-zSZ" secondAttribute="leading" constant="10" id="vgt-1f-bAV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DhM-g6-zSZ"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="uxu-Ff-b4R" appends="YES" id="wvn-Ut-5aT"/>
                         </connections>
@@ -319,6 +320,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4LA-S6-LQh"/>
                         <color key="backgroundColor" red="0.81176470588235294" green="0.90980392156862744" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="62S-fo-JY6" firstAttribute="top" secondItem="4LA-S6-LQh" secondAttribute="top" constant="20" id="3we-oC-vXT"/>
@@ -332,7 +334,6 @@
                             <constraint firstItem="25b-BY-WxD" firstAttribute="leading" secondItem="4LA-S6-LQh" secondAttribute="leading" constant="20" id="rdi-R6-owB"/>
                             <constraint firstItem="25b-BY-WxD" firstAttribute="top" secondItem="BbN-qV-dKJ" secondAttribute="bottom" constant="20" id="s6c-tc-wls"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4LA-S6-LQh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="icons8-pluie-25" id="g1i-Sz-0Dv"/>
                     <connections>
@@ -376,7 +377,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EF7-Dy-mUZ" userLabel="ViewTampon 1">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="75.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fQe-49-Woc" userLabel="Stack View Haut">
                                         <rect key="frame" x="0.0" y="104.5" width="394" height="110"/>
@@ -395,12 +396,12 @@
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LrE-Md-YYj" userLabel="votreTexte">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="80"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqP-Ps-ZAi">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqP-Ps-ZAi">
                                                         <rect key="frame" x="364" y="0.0" width="30" height="80"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -408,7 +409,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="Zg8-XN-o5T"/>
                                                         </constraints>
                                                         <state key="normal" title="&gt;">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="titleColor" systemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="validateButton:" destination="87U-6N-chk" eventType="touchUpInside" id="xlY-Z1-3Zz"/>
@@ -454,11 +455,11 @@
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTA-BM-YdG" userLabel="traductionText">
                                                 <rect key="frame" x="0.0" y="47" width="394" height="80"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="muJ-QQ-Ks5"/>
                                                 </constraints>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -484,6 +485,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Nf-Kv-Vvh"/>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.90980392160000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -497,7 +499,6 @@
                             <constraint firstItem="mvy-L6-i13" firstAttribute="leading" secondItem="EdW-aI-rUJ" secondAttribute="leading" constant="10" id="rzi-cc-8PV"/>
                             <constraint firstItem="rzn-gb-dQJ" firstAttribute="top" secondItem="mvy-L6-i13" secondAttribute="bottom" constant="10" id="ztv-PL-7ux"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4Nf-Kv-Vvh"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="xAv-gv-qCn" appends="YES" id="8Lj-xT-q9P"/>
                         </connections>
@@ -526,5 +527,17 @@
         <image name="icons8-langue-25" width="25" height="25"/>
         <image name="icons8-lever-du-soleil-500" width="500" height="500"/>
         <image name="icons8-pluie-25" width="25" height="25"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

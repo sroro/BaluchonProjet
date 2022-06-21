@@ -12,7 +12,7 @@ final class CurrencyViewController: UIViewController {
     
     // MARK: - properties
     private let currencyService = CurrencyService()
-    private var target = "USD"
+    private var target = "AED"
     private var devise = ["USD" , "AED" , "GBP" , "CAD", "CHF"]
     
     override func viewDidLoad() {
@@ -30,22 +30,26 @@ final class CurrencyViewController: UIViewController {
     }
     
     @IBAction private func validateButton(_ sender: UIButton) {
+        
         currencyService.getExchange(devise: target) { [weak self] result in
             switch result {
             case .failure(_):
-                self?.alert()
+                print("error")
             case .success(let exchangeRate):
                 DispatchQueue.main.async {
                     
                     guard let amontUnwrapped = self?.amountTextField.text else { return }
                     
                     // converted and unpacks duplicate user input
-                    guard let amountDouble = Double(amontUnwrapped) else { return }
+                    guard let amountDouble = Double(amontUnwrapped) else {
+                        self?.alertCurrency()
+                        return }
                     
                     // multiplies exchange rate with user input and reduces it to 2 digits after comma
                     let amountReduce = self?.formatResult(result: amountDouble * exchangeRate)
                     
                     self?.amountChangeLabel.text = amountReduce
+                    
                 }
             }
         }

@@ -26,7 +26,7 @@ final class WeatherService {
     
     ///Récupère conditions météorologique
     func getWeather(callback: @escaping (Result<WeatherData, Error> ) -> Void) {
-        guard let weatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/group?id=2988507,5128581&units=metric&appid=8b01aef39585f7ff04d3d616819e17c3&lang=fr") else {return}
+        guard let weatherUrl = URL(string: "http://api.openweathermap.org/data/2.5/group?id=2988507,5128581&units=metric&appid=581c10d482e588157559c909970f3f56&lang=fr") else {return}
         
         task?.cancel()
         task = session.dataTask(with: weatherUrl, completionHandler: { (data, response, error) in

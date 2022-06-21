@@ -32,14 +32,17 @@ final class TranslateViewController: UIViewController {
     }
     
     @IBAction private func validateButton(_ sender: UIButton) {
-        guard let text = textToTranslate.text else { return }
+        guard let text = textToTranslate.text , !text.isEmpty  else {
+            alertTranslate()
+            return
+        }
         translate.getTranslate(text: text, target: target  ) { [weak self] result in
             switch result {
             case .failure(_):
-                self?.alert()
+                print("error")
             case .success(let translateData):
-                 DispatchQueue.main.async {
-                self?.textTranslate.text = translateData.data.translations[0].translatedText
+                DispatchQueue.main.async {
+                    self?.textTranslate.text = translateData.data.translations[0].translatedText
                 }
             }
         }
@@ -66,6 +69,7 @@ final class TranslateViewController: UIViewController {
 }
 
 //MARK: - Méthodes PickerView
+
 
 extension TranslateViewController :  UIPickerViewDelegate , UIPickerViewDataSource {
     

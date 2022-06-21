@@ -28,7 +28,7 @@ final class WeatherViewController: UIViewController {
         weather.getWeather() { result in
             switch result {
             case .failure(_):
-                self.alert()
+                print("error")
             case .success(let weatherData):
                 DispatchQueue.main.async {
                     for i in 0..<2 {
